@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        height: 100vh;
+        width: 100vw;
+    }
+    button{
+        background-color: rgb(80, 80, 35);
+        padding: 0.6rem 2.4rem;
+        border-radius: 10rem;
+        margin-right: 3.6rem;
+        cursor: pointer; 
+    }
+    .main-todo-div{
+        /* display: grid; */
+        /* grid-template-columns: 1fr 0.1fr; */
+        display: flex;
+        align-items: center;
+        height: auto;
+        font-size: 2rem;
+        padding: 0.6rem 1rem;
+    }
+   
+    #inputValue{
+        padding: 0.5rem 2rem ;
+        
+    }
+    /* h1{
+        text-align: center;
+    } */
+</style>
+<body>
+    <h1>Todo List</h1>
+    <br>
+    <form action="">
+        <div class="check">
+            <input type="text" id="inputValue">
+            <button class="btn">Add Todo</button>
+            <section class="todo-list-element"></section>
+        </div>
+    </form>
+
+    <script>
+
+        let MainTodoElem = document.querySelector(".todo-list-element");
+        let inputValu = document.getElementById("inputValue");
+
+        let LocalTodoList = [];
+
+
+        const getTodoListFromLocal = ()=>{
+            return JSON.parse(localStorage.getItem("myTodoList"));
+        };
+
+        const addTodoListLocalStorage=(LocalTodoList)=>{
+            return localStorage.setItem("myTodoList", JSON.stringify(LocalTodoList))
+        }
+
+        LocalTodoList = getTodoListFromLocal()|| [];
+
+
+        const addTodoDynamicElem = (currVal)=>{
+            const divElement = document.createElement("div");
+            divElement.classList.add("main-todo-div");
+            divElement.innerHTML = `<li>${currVal}</li> <button class= "deleteBtn">Delete</button>`;
+            MainTodoElem.append(divElement)
+
+        }
+
+        const addTodoLisst = (e)=>{
+            e.preventDefault();
+
+            const todoListValue = inputValu.value.trim();
+
+            inputValu.value = "";
+
+
+            if( todoListValue !== " " && !LocalTodoList.includes(todoListValue)){
+            LocalTodoList.push(todoListValue);
+            LocalTodoList = [...new Set(LocalTodoList)]
+            console.log(LocalTodoList);
+            localStorage.setItem("myTodoList", JSON.stringify(LocalTodoList));
+
+            addTodoDynamicElem(todoListValue);
+            }
+
+            // const divElement = document.createElement("div");
+            // divElement.classList.add("main-todo-div");
+            // divElement.innerHTML = `<li>${inputValu.value}</li> <button class= "deleteBtn">Delete</button>`;
+            // MainTodoElem.append(divElement)
+        };
+
+
+        const showTodoList = ()=>{
+            console.log(LocalTodoList);
+
+
+            LocalTodoList.forEach ((currVal)=>{
+            addTodoDynamicElem(currVal);
+        });
+
+        };
+
+        showTodoList();
+
+        const removeTodoElemm = (e)=>{
+            console.log(e.target);
+            const todoToRemove = e.target;
+            todoListContent = todoToRemove.previousElementSibling.innerText;
+            let parentElem = todoToRemove.parentElem;
+            console.log(todoListContent);
+
+
+            LocalTodoList=LocalTodoList.filter((curTodo)=>{
+                // console.log(curTodo);
+                return curTodo !== todoListContent.toLowerCase();
+            });
+
+            addTodoListLocalStorage(LocalTodoList);
+            parentElem.remove();
+
+            console.log(LocalTodoList);
+        };
+
+        
+
+        
+
+        MainTodoElem.addEventListener("click", (e)=>{
+            e.preventDefault();
+            console.log(e.target);
+            if(e.target.classList.contains("deleteBtn")){
+                removeTodoElemm(e)
+
+            }
+            
+        })
+
+        document.querySelector(".btn").addEventListener("click", (e)=>{
+            console.log(e.target);
+            addTodoLisst(e);
+        })
+
+       
+
+
+
+
+    </script>
+</body>
+</html>

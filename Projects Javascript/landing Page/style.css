@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html{
+    height: 100%;
+    width: 100%;
+}
+#main{
+    height: 100vh;
+    width: 100%;
+    /* background-color: black; */
+}
+#back{
+    width: 100%;
+    height: 100vh;
+}
+#top{
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* background-color: #100202; */
+    /* background-color: transparent; */
+}
+#workingarea{
+    height: 100vh;
+    width: 80%;
+    max-width: 1920px;
+    margin: 0 auto;
+    /* background-color: aqua; */
+    /* border: 2px solid red; */
+    color: #fff;
+    padding: 40px 0 ;
+    position: relative;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.leftnav img{
+   height: 60px;
+}
+.leftnav a,
+.rightnav a{
+    text-decoration: none;
+    color: #fff;
+    pointer-events: all;
+}
+.nav .leftnav,
+.nav .rightnav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    word-spacing: 1px;
+}
+#hero{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* height: 100px; */
+    /* background-color: red; */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0,-50%);
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+#heroleft{
+    min-width: 50%;
+    /* height: 100px; */
+    /* background-color: yellow; */
+}
+#heroright{
+    width: 17%;
+    color: #fff;
+    font-family: "gilroy";
+    /* height: 100px; */
+    /* background-color: rgb(0, 255, 119); */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+#heroleft .elems{
+    height: 9vw;
+    position: relative;
+    /* background-color: red; */
+    overflow: hidden;
+}
+#heroleft .elems h1{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-family: "kajiro";
+    font-weight: 400;
+    font-size: 11vw;
+    line-height: .9;
+}
+#heroleft .elems h1:nth-child(1){
+    top: 0;
+}
+#heroleft button{
+    padding: .8vw 2vw;
+    /* font-size: 3vw; */
+    font-size: 2vw;
+    margin-top: 2vw;
+    font-family: "kajiro";
+    pointer-events: all;
+
+}
+#heroright p{
+    font-size: 14px;
+    text-align: right;
+    font-weight: 400;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 20px;
+    word-spacing: 2px;
+}
+#heroright #imagediv{
+width: 100%;
+height: 170px;
+margin-bottom: 60px;
+margin-top: 20px;
+margin-bottom: 30px;
+background-color: red;
+background-image: url(https://images.unsplash.com/photo-1502631745930-7ccdf29d659b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+background-position: center;
+background-size: cover;
+}
+#heroright p:nth-child(3){
+    margin-bottom: 50px;
+    /* margin-bottom: 120px; */
+}
+#back img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

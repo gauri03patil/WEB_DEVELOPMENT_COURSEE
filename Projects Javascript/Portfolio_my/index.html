@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <!-- start nav section  -->
+    <div id="header">
+        <div class="container">
+            <nav>
+                <div class="logo"><span>G</span>auri.</div>
+                <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Service</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact </a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Front-End Developer</p>
+                <h1>Hi, I'M <span>Gauri</span> <br />Patil From India</h1>
+            </div>
+        </div>
+    </div>
+    <!-- end nav section  -->
+    <!-- About section start  --> 
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="./Images/IMG-20221103-WA0002.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I'm Gauri Patil, a dedicated financial advisor with 2.5 years of
+                        invaluable experience at Deloitte. Known for my unwavering work
+                        ethic and meticulous attention to detail, I thrive in providing
+                        comprehensive financial guidance to clients. My commitment to
+                        excellence drives me to continuously learn and adapt to dynamic
+                        market trends. With a passion for problem-solving and a track
+                        record of delivering result."</p>
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>FED</span><br>Front-End Development</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>2021 - 2022</span><br />Intern at Deloitte</li>
+                <li><span>2022-2024</span><br />Executive at Deloitte</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2021</span><br />PGDFM from Mumbai University</li>
+                <li><span>2020</span><br />TYBAF from Mumbai University</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- end about section  -->
+    <!-- service section start  -->
+    <div id="services">
+<div class="container">
+    <h1 class="sub-title">My Services</h1>
+    <div class="service-list">
+<div>
+    <i class="fa-solid fa-code"></i>
+    <h2>HTML & CSS</h2>
+    <p>
+        HTML defines the structure of web pages using tags, while CSS
+        styles the appearance of these elements by specifying layout,
+        colors, and fonts.
+      </p>
+      <a href="">learn more</a>
+</div>
+<div>
+    <i class="fa-solid fa-crop-simple"></i>
+    <h2>JAVASCRIPT</h2>
+    <p>
+        JavaScript (JS) is a versatile programming language primarily
+                  used for adding interactivity and dynamic behavior to web
+                  pages, often executed within web browsers.
+      </p>
+      <a href="">learn more</a>
+</div>
+<div>
+    <i class="fa-brands fa-adn"></i>
+    <h2>REACT JS</h2>
+    <p>
+        React.js is a JavaScript library for building user interfaces,
+                  offering a component-based architecture and efficient
+                  rendering, commonly used for creating interactive web
+                  applications.
+      </p>
+      <a href="">learn more</a>
+</div>
+    </div>
+
+</div>
+    </div>
+    <!-- /////////////////////////portfolio///////////////// -->
+    <div id="portfolio">
+<div class="container">
+<h1 class="sub-title">My Work</h1>
+<div class="work-list">
+<div class="work">
+<img src="./Images/work-1.png" alt="">
+<div class="layer">
+<h3>Food App</h3>
+<p>In essence, the grid structure visually organizes content, while the navigation bar streamlines navigation across different sections of the app. Additionally, the footer offers supplementary navigation options and access to crucial information. Collectively, these components synergize to create a well-structured and user-friendly interface for the food app.</p>
+<a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+</div>
+</div>
+<div class="work">
+    <img src="./Images/work-2.png" alt="">
+    <div class="layer">
+        <h3>Music App</h3>
+        <p>the navigation bar facilitates user movement across various sections within the music app, while the main content area showcases essential elements like albums and playlists. By employing the flex property, the app's layout maintains flexibility and responsiveness, accommodating diverse screen sizes and orientations seamlessly.</p>
+        <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+        </div>
+    </div>
+    <div class="work">
+        <img src="./Images/work-3.png" alt="">
+        <div class="layer">
+            <h3>Online Shopping</h3>
+            <p>In essence, the grid structure visually organizes content, while the navigation bar streamlines navigation across different sections of the app. Additionally, the footer offers supplementary navigation options and access to crucial information. Collectively, these components synergize to create a well-structured and user-friendly interface for the food app.</p>
+            <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+</div>
+<a href="#" class="btn">See More</a>
+</div>
+    </div>
+    
+<!-- //////////////////contact section /////////// -->
+<div id="contact">
+<div class="container">
+<div class="row">
+<div class="contact-left">
+    <h1>Contact Me</h1>
+    <p><i class="fa-solid fa-paper-plane"></i>gauri.patil.0201@gmail.com</p>
+    <p><i class="fa-solid fa-phone"></i>1234567890</p>
+    <div class="social-icon">
+        <a href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook"></i></a>
+        <a href="https://twitter.com/i/flow/login"><i class="fa-brands fa-square-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i></a>
+        <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <a href="Images/work-1.png" download class="btn btn2">Download</a>
+</div>
+<div class="contact-right">
+    <form>
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="email" name="Email" placeholder="Your Email" required>
+        <textarea name="meassage" rows="6" placeholder="Your Message"></textarea>
+        <button type="Submit" class="btn btn2">Submit</button>
+    </form>
+</div>
+</div>
+</div>
+<div class="copyright">
+<p>Copyright Gauri.<i class="fa-solid fa-heart"></i></p>
+</div>
+</div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>

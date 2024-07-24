@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+    }
+    #box{
+        width: 10rem;
+        aspect-ratio: 1;
+        background-color: blueviolet;
+        transition: all 0.3s linear;
+    }
+    .addTrasition{
+        border-radius: 50%;
+        background-color: aquamarine;
+        translate: 30rem 0;
+    }
+    .addsomething{
+        border-radius: 30%;
+        border: 2px solid black;
+        translate: -30rem 0;
+    }
+    .checkFile{
+      border-left: 50px solid transparent;
+      border-right: 50px solid black;
+      /* border-bottom: 100px solid red; */
+      rotate: 180deg;
+      background-color: blue;
+    }
+</style>
+<body>
+    <div class="container">
+        <div id="box"></div>
+        <button id="button-Click">Click Me</button>
+    </div>
+
+    <script>
+let myDiv = document.getElementById("box");
+let myBtn = document.getElementById("button-Click");
+
+// const myClick = ()=>{
+//     myDiv.classList.add("circle");
+// }
+
+const haldleMouseEvents = () =>{
+    console.log("Click");
+    myDiv.style.backgroundColor = "red";
+}
+
+const haldleMouseEvent1 =()=>{
+    myDiv.classList.add("addTrasition");
+}
+const haldleMouseEvent3 = ()=>{
+myDiv.classList.add("addsomething")
+}
+const haldleMouseEvent6 = ()=>{
+    myDiv.classList.add("checkFile")
+}
+
+myBtn.addEventListener("click", haldleMouseEvents);
+myBtn.addEventListener("dblclick", haldleMouseEvent1);
+myDiv.addEventListener("mousedown", ()=>{
+    haldleMouseEvent3()
+})
+myDiv.addEventListener("click", ()=>{
+    haldleMouseEvent6()
+})
+
+
+    </script>
+</body>
+</html>

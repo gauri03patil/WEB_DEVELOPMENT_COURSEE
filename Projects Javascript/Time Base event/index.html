@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section>
+      <p id="countDown">0</p>
+      <div class="buttons">
+        <button class="start_btn">Start</button>
+        <button class="reset_btn">Reset</button>
+        <button class="stop_btn">Stop</button>
+        <button class="time_btn">getTime</button>
+        <button class="clear_btn">clearTime</button>
+      </div>
+      <div class="resetValue"></div>
+    </section>
+    <script>
+      
+      let countDownElemt = document.getElementById("countDown");
+      let resetValueElement = document.querySelector(".resetValue")
+
+      let startCout = 0;
+      let inValValId;
+
+    //   function for start 
+      const startTime = ()=>{
+        inValValId = setInterval(()=>{
+            countDownElemt.innerHTML = startCout++;
+        }, 1000);  
+      };
+
+    //   function for stop 
+
+    const stopTimer = ()=>{
+        showStopValue();
+        clearInterval(inValValId);
+    };
+
+    // reset time 
+
+    const resetTime = ()=>{
+        startCout=0;
+        countDownElemt.innerHTML = startCout;
+        clearInterval(inValValId)
+
+    }
+
+    // stop value 
+    const showTimeValue = ()=>{
+        const newPara = document.createElement("p");
+        newPara.innerText = `the stop time is ${startCout-1}`;
+        resetValueElement.append(newPara);
+    };
+
+    // clear value 
+
+    const clearTimeValue = ()=>{
+        resetValueElement.innerText = "";
+    }
+
+
+    //   event Listner 
+document.querySelector(".start_btn").addEventListener("click", startTime);
+document.querySelector(".reset_btn").addEventListener("click", resetTime);
+document.querySelector(".stop_btn").addEventListener("click", stopTimer);
+document.querySelector(".time_btn").addEventListener("click", showTimeValue);
+document.querySelector(".clear_btn").addEventListener("click", clearTimeValue);
+
+
+
+
+    </script>
+  </body>
+</html>

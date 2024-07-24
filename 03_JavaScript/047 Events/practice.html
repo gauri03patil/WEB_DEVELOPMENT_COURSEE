@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- inline events  -->
+    <!-- <button onclick="alert('welcome')">Button</button>
+    <button ondblclick="alert('this is my website')">Click Me</button> -->
+
+    <!-- DOM method  -->
+    <button id="one">click me</button>
+    <button id="two">click me</button>
+    <button onclick="document.getElementById('demo').innerHTML=Date()">click here</button>
+    <button ondblclick="document.getElementById('myFun').innerHTML=Date()">click</button>
+    <button onclick="this.innerHTML=Date()">click here please</button>
+    <p id="demo"></p>
+    <a href="#" id="myFun"></a>
+    <p id="hello"></p>
+
+    <button onclick="handleClick()">check</button>
+
+
+    function handleClick() {
+        document.getElementById("demo").innerHTML = Date();
+      }
+    <script>
+
+        // DOM Method 
+// let data = document.getElementById("one").onclick = ()=>{
+//     alert("welcome to website")
+// }
+
+// let myData = document.getElementById("two").ondblclick=()=>{
+//     alert("hey...this is gauri patil")
+// }
+
+
+// let myList = document.getElementById("one").addEventListener("click", ()=>{
+//     alert("this is my first website");
+// })
+
+// let myFun = document.getElementById("two").addEventListener("click",()=>{
+//     alert("hey all ..... welcome to your website")
+// })
+
+
+    </script>
+</body>
+</html>

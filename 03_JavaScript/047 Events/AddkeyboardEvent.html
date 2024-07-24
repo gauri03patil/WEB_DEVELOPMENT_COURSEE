@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="download" placeholder="type here">
+        <div class="myDdata">
+        <p id="press">Key Pressed:</p>
+        <p id="code">Key code:</p>
+        <p id="char">Char Code:</p>
+        <p id="type">Key Type:</p>
+        </div>
+    </div>
+
+
+    <script>
+        let myData = document.getElementById("download");
+
+        const haldleKeyPress = (event)=>{
+            console.log(event);
+            // console.log(event.key);
+
+            console.log("key pressed:", event.key);
+            console.log("key code:", event.code);
+            console.log("key char:", event.char);
+            console.log("Event type:", event.type);
+
+            document.querySelector("#press").textContent = `key pressed: ${event.key}`;
+            document.querySelector("#code").textContent = `key code: ${event.code}`;
+            document.querySelector("#char").textContent = `key char: ${event.char}`;
+            document.querySelector("#type").textContent = `Event type: ${event.type}`;
+        }
+
+         
+
+        // myData.addEventListener("keydown", haldleKeyPress);
+        myData.addEventListener("keyup", haldleKeyPress)
+
+
+
+        // myData.addEventListener("keydown", ()=>{
+        //     haldleKeyPress()
+        // })
+    </script>
+</body>
+</html>

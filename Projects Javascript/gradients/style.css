@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    display: grid;
+    place-content: center;
+}
+
+.section-div{
+    /* margin: auto; */
+    text-align: center;
+}
+
+button{
+    padding: 0.4rem 0.7rem;
+    border-radius: 5rem;
+}

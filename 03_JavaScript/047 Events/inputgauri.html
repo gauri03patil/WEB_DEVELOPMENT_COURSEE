@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <input
+          type="text"
+          id="word"
+          placeholder="Enter Char or Text"
+          name="username"
+          autocomplete="off"
+        />
+  
+        <div class="data">
+          <p id="press">Input Value:</p>
+          <p id="code">Input Name:</p>
+          <p id="char">Input Type:</p>
+          <p id="type">Event Type:</p>
+        </div>
+      </div> 
+
+      <script>
+        let myDataa = document.getElementById("word");
+        
+        const haldleInput = (event)=>{
+        console.log(event);
+        console.log("Input Value:", event.target.value);
+        console.log("Input Name:", event.target.name);
+        console.log("Input Type:", event.inputType);
+        console.log("Event Type:", event.type);
+
+        document.querySelector("#press").textContent = `Input Value: ${event.target.value}`;
+        document.querySelector("#code").textContent = `Input Name: ${event.target.name}`;
+        document.querySelector("#char").textContent = `Input Type: ${event.inputType}`;
+        document.querySelector("#type").textContent = `Event Type: ${event.type}`;
+
+
+        }
+
+
+        // myDataa.addEventListener("input", haldleInput);
+            text.addEventListener("change", haldleInput);
+
+      </script>
+</body>
+</html>

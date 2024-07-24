@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="addBtn">Add Data to local storage</button>
+    <button id="getBtn">Get data to local storage</button>
+    <button id="removeBtn">Delete data from local storage</button>
+    </div>
+
+    <script>
+        const studetData = {
+            firstName : "gauri",
+            lastName:"patil",
+            age:55,
+            course:["maths","science","marathi"],
+        }
+
+        const addTodoList = ()=>{
+            // localStorage.setItem("objectData", studetData)
+            localStorage.setItem("objectData", JSON.stringify(studetData))
+        }
+
+        const getTodoList=()=>{
+            const retrivevedData = JSON.parse(localStorage.getItem("objectData"));
+            console.log("retrived from local storage",retrivevedData );
+        }
+
+        const removeTodoList = ()=>{
+            const removeEata = localStorage.removeItem("objectData");
+            console.log("data is remove:", removeEata);
+        }
+
+        document.getElementById("addBtn").addEventListener("click", ()=>{
+            addTodoList();
+        })
+        document.getElementById("getBtn").addEventListener("click", ()=>{
+            getTodoList();
+        })
+        document.getElementById("removeBtn").addEventListener("click", ()=>{
+            removeTodoList();
+        })
+    </script>
+    
+    <!-- <script src="./local_storage.js"></script> -->
+</body>
+</html>
